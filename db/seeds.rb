@@ -10,7 +10,7 @@ user_serialized = URI.open(url).read
 movies = JSON.parse(user_serialized)["results"]
 
 movies.each do |result|
-  Movie.create(title: result["title"], rating: result["vote-average"], overview: result["overview"], poster_url:"https://image.tmdb.org/t/p/original#{result["poster_path"]}")
+  Movie.create(title: result["title"], rating: result["vote_average"], overview: result["overview"], poster_url:"https://image.tmdb.org/t/p/original#{result["poster_path"]}")
 end
 
 puts "Movies added"
