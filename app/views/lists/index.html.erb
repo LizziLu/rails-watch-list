@@ -1,16 +1,22 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)), url(https://images.unsplash.com/photo-1536440136628-849c177e76a1?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1225&q=80);">
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)), url(https://images.unsplash.com/photo-1523207911345-32501502db22?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1350&q=80);">
   <div class="container">
     <h1>Lisa's Watch Lists</h1>
-    <p>Change your life and learn to code at one of our campuses around the world.</p>
-    <a class="btn btn-flat" href="#">Apply now</a>
+    <p>Check the movie lists to find the perfect movie for every mood</p>
+    <%=link_to "Add new list", new_list_path%>
+
   </div>
-</div><h1>My watch lists</h1>
+</div>
 
-<% @lists.each do |list| %>
-<div>
-<h2><%=link_to list.name, list_path(list)%></h2>
-<% end %>
+<div class="container">
+  <div class="row">
+  <% @lists.each do |list| %>
+  <div class="col-sm-4">
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+      <%=link_to list.name, list_path(list)%>
+      </div>
+    </div>
+  <% end %>
+  </div>
+</div>
 
-<p>
-  <%= link_to '+Add new list',new_list_path %>
-</p>
+
